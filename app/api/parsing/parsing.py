@@ -22,15 +22,6 @@ async def pars_questions(num: int) -> List[ParsResponse]:
         try:
             return [ParsResponse(**item) for item in data]
         except ValidationError as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Failed to parse response: {e}",
-                headers={"X-Error": str(e)}
-            )
+            return None
     else:
-        raise HTTPException(
-            status_code=response.status_code,
-            detail=f"Failed to make questions. "
-                f"Status code: {response.status_code}, "
-                f"Response: {response.text}"
-        )
+        return None
