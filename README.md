@@ -19,7 +19,8 @@ PGADMIN_DEFAULT_PASSWORD=password
 
 ### Build and run the Docker containers
 ```
-docker-compose up --build
+docker-compose build
+docker-compose up
 ```
 
 
