@@ -67,7 +67,7 @@ async def get_lastest_question(questions_num: int) -> QuestionResponse:
 
             data = await pars_questions(questions_num)
 
-            if isinstance(data, HTTPException):
+            if data is None:
                 continue
             
             all_ids = [item.id for item in data]
