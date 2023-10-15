@@ -7,7 +7,7 @@ router = APIRouter()
 @router.post("/api/v1/get_unique_question")
 async def questions_num(questions_num: int):
     """
-    Возвращет пользователю текст последнего сохраненного вопроса
-    или "", если таковой отсутствует.
+    Возвращает пользователю текст последних сохраненных вопросов
+    или "", если такове отсутствуют.
     """
     return await get_lastest_question(questions_num)
