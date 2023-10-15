@@ -10,6 +10,9 @@ class BaseResponse(BaseModel):
 
 
 class QuestionResponse(BaseModel):
+    """
+    Для ответа на запрос пользователя об уникальных вопросах 
+    """
     question: str
 
 
