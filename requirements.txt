@@ -1,0 +1,11 @@
+httpx==0.25.0
+fastapi[all]>=0.45.0,<0.46.0
+sqlalchemy==1.4.49
+databases==0.8.0
+starlette
+pydantic>=1.2.0,<2.0.0
+uvicorn==0.23.2
+alembic==1.12.0
+psycopg2-binary==2.9.9 
+python-dotenv==1.0.0
+asyncpg==0.28.0

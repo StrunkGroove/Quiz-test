@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+
+  postgres:
+    image: postgres:16
+    volumes:
+      - ./postgres/postgres:/var/lib/postgresql/data/
+    ports:
+      - 5433:5432
+    env_file:
+        - .env
+    networks:
+      - default
+
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file:
+        - .env
+    ports:
+      - 80:80
+    depends_on:
+      - postgres
+    networks:
+      - default
+
+  web:
+    build: .
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+    volumes:
+      - .:/code
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+networks:
+  my_network:
+    driver: bridge
