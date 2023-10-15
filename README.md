@@ -31,4 +31,8 @@ docker exec -it quiz-test-web-1 bash
 alembic revision --autogenerate -m 'initial'
 alembic upgrade head
 ```
-### Test!
+
+### Go to and test!
+```
+0.0.0.0:8080/docs
+```
