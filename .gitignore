@@ -1,5 +1,5 @@
 __pycache__/
 postgres/
-versions/*.py
+alembic/versions/*.py
 __init__.py
 .env
